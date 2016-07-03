@@ -1,0 +1,5 @@
+/buildcb
+/lib/*
+!/lib/folder.txt
+/samples/methods.xls
+/samples/sqlite-shell.exe
