@@ -5,7 +5,8 @@ This is a subclass of wxTreeCtrl that adds a number of methods to allow the node
 To use the control, construct it as you would any other tree control and then call the method:
 
 ```C++
-SetHelperAndData(wxRearrangeTreeHelper* h, wxSQLite3Database* d, const wxString& t, const wxString& e=wxEmptyString);
+SetHelperAndData(wxRearrangeTreeHelper* h, wxSQLite3Database* d, 
+                 const wxString& t, const wxString& e=wxEmptyString);
 ```
 where h is a special helper class that will be described later, d is a pointer to a wxsqlite3 database, t is the name of the table in the database describing a tree, and e is an optional table tracking the expanded nodes in the table.
 
@@ -71,6 +72,7 @@ In order to preserve the sync between the database and the control, the followin
 * wxTreeCtrl::InsertItem;
 * wxTreeCtrl::PrependItem;
 * wxTreeCtrl::SetItemData;
+
 New methods for adding nodes were added to replace these methods.
 
 ### Requirements
