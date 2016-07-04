@@ -72,7 +72,7 @@ wxSimpleRearrangeTreeHelper::~wxSimpleRearrangeTreeHelper()
 }
 
 
-wxString wxSimpleRearrangeTreeHelper::GetLabel(int i,int d)
+wxString wxSimpleRearrangeTreeHelper::GetLabel(int i,int WXUNUSED(d))
 {
     wxString s = "New Item";
 
@@ -91,7 +91,7 @@ wxString wxSimpleRearrangeTreeHelper::GetLabel(int i,int d)
     return s;
 }
 
-int wxSimpleRearrangeTreeHelper::GetIcon( int i, int d, wxTreeItemIcon ti )
+int wxSimpleRearrangeTreeHelper::GetIcon( int i, int WXUNUSED(d), wxTreeItemIcon WXUNUSED(ti) )
 {
     //in the configure node method, this function is called 4 times.  So that
     //we don't have to do 4 db reads, we'll cache the last id checked and
@@ -121,7 +121,7 @@ int wxSimpleRearrangeTreeHelper::GetIcon( int i, int d, wxTreeItemIcon ti )
     return m_lastIconFetched;
 }
 
-void wxSimpleRearrangeTreeHelper::UpdateLabel(int i,int a ,const wxString& s)
+void wxSimpleRearrangeTreeHelper::UpdateLabel(int i,int WXUNUSED(a) ,const wxString& s)
 {
     m_updateLabelStmt.ClearBindings();
     m_updateLabelStmt.Reset();
@@ -130,7 +130,7 @@ void wxSimpleRearrangeTreeHelper::UpdateLabel(int i,int a ,const wxString& s)
     m_updateLabelStmt.ExecuteUpdate();
 }
 
-void wxSimpleRearrangeTreeHelper::UpdateIcon(int i,int d,int im, wxTreeItemIcon ti)
+void wxSimpleRearrangeTreeHelper::UpdateIcon(int i,int WXUNUSED(d),int im, wxTreeItemIcon ti)
 {
     //invalidate m_lastIdChecked so that if we are asked for its icon, we
     //will refetch it instead of giving the cached value
